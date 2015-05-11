@@ -1,0 +1,256 @@
+document.write('<style>#pme_cardbar_bar a img { -moz-border-radius: 24px;-webkit-border-radius: 24px;border-radius: 24px; }#pme_cardbar_bar {z-index: 100000;display: block;position: fixed;right:0;top:60px;width: 56px;}#pme_cardbar_bar a {position:relative;display: block;width: 56px;height: 54px;margin-top: 5px;margin-bottom: 5px;overflow:hidden;background-color:#e2007a;border-left:2px solid #fff;border-top:2px solid #fff;border-bottom:2px solid #fff;-moz-border-top-left-radius: 27px;-webkit-border-top-left-radius: 27px;border-top-left-radius: 27px;-moz-border-bottom-left-radius: 27px;-webkit-border-bottom-left-radius: 27px;border-bottom-left-radius: 27px;}#pme_cardbar_bar a div {display:block;position:relative;top:3px;left:4px;width:48px;height:48px;-moz-border-radius: 24px;-webkit-border-radius: 24px;border-radius: 24px;overflow:hidden;}#pme_cardbar_bar a div img {width:auto;position:absolute;left:-7px;height:48px;}#pme_cardbar_info_container {z-index: 99999;display:block;width:800px;height:400px;position:fixed;opacity:0;top:60px;right:-810px;-webkit-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000); -moz-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000); -o-transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000); transition: all 500ms cubic-bezier(0.250, 0.100, 0.250, 1.000);-webkit-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000); -moz-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000); -o-transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000); transition-timing-function: cubic-bezier(0.250, 0.100, 0.250, 1.000);}#pme_cardbar_info_container.visible {top:60px;right:-60px;opacity:1;}#pme_cardbar_info {position:relative;width:660px;height:400px;background-color:#e2007a;-moz-border-radius: 6px;-webkit-border-radius: 6px;border-radius: 6px;border:2px solid #fff;-moz-box-shadow: 0px 0px 10px #919191; /*FF3.5+*/-webkit-box-shadow: 0px 0px 10px #919191; /*Saf3.0+,Chrome*/box-shadow: 0px 0px 10px #919191; /*Opera10.5,IE9*/}#pme_cardbar_info #pme_cardbar_info_close {display:block;position:absolute;top:-10px;right:-10px;width:30px;height:30px;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAQAAACROWYpAAAEEElEQVQ4y32Va2yTVRzGf23fd10vUNqxsY1dGIyba7BsTgiwhcRkgxHkFkJAuQzIggY0IXGYkKA4DeAQMQTIiIB+MyRAJn7hAxJRJKIRiJgQIhESZxYFEuja9f74oe1aoPh/vrx5z3nO/3qeA0+aBSvW+UaT2VBUb+91HXY3FDUUNZnzDaxYsfBcs2DDpHjqqC1ln07YU79t0oGX+mY1V3dWv1/VWVrqphgTW+EDLBjYS91tZZ/5v+34d1/sijIWv/bw2IXFy2urfKVu7BjP0q0YOCaMWVlzfF7wdJY2mLybzH4/+mpq3cxKrwcHBtanvTqrfK/X97+avCvFUn2xtjDBNJpDn8SGU1Ls+oXVTTUeL8587xYMHKN97fWnlikqnU/UDmWJWUwL/ZKQpPOvTZvg8eLI0W3Y8cyo+3hB4p50MmYLUgC24EdRSTq6rLIaD/Z06SyYuMdWvjnv4TfS+URhahpHYlLwR16gHDcmVrBSPNrXOv2LTimUrMoE3BiaO5Jz2dCmiDNIkGBRcCAuffde1WR8FGMDKy5n5cp5f34pHYqlt/tDkrQ7SpDgxNBASurLrHRFpPsXmUEFbgyw4fFM7FgQvi7NznirHQorTZ8cGkhJUm80vVIylJA0ppU6xlAEBiXj/EvWSI+TuewWhdP0xylJOhPPVeJGVNqxbdQ0xlIMprusoXnzW9LtRH5xFoUjmfHIpxL8Oiod3ed6kXE4wHRW+Od0dku/J57s7P1UmvxBNP//2ah0+CCNVOICk8qyOS3bpAeJfOpgSpISypUujZ+GpXd6HC8zPkM2Z9Vtiv0jZRvlGRrM5Lo4k/vWSHZUHsWlGW+YI+QKs7lh/Z1L0tuZLbPDuVzTpTsVT6+0haXB31hNUzbsMjMwZdWBz6XBuDOY7efWiG3kYuyOZmO6FJLOnWM5mYIZlDDd3lHVPXAt18/C2DAsBf8u2cECpqdbZcNDndHi27S5T5I2DD+POjccT0qHz9JJS3ZIrLioIGBbNu7dI6claVdB72uHI0np8lW6WUIgO55WivFRT6ttvffDQ/2SdCuyatiZR2wLXwlL0uVf6WEdrdRnL4YFEzfl+Gm3dXn2bun/67YkRZI3oscjxyM/Rx7FJenBwP6L7KWLdvy5K5kRA6qZSYety9nDiYM//HFLeXbvzsmr5kl66KKDmeSJQUaG8FJDgHbW0e3YzwnPmVe+33lz582Oy+P7OcF+ullHOwFqeEKGMgKIl2r8tLCUjWxnl7HH6KXX2GPdxXY2spQW/FTzlACOSC8eyplEgBYWsoI1rGUta1jBQloIMIlyCkhv9r2w48JLObVMwU+ARhoJ4GcKtZTjxZXL9Vm6BSsGJnYcOHFl4MSBHRMDK5b/e69yxzyNAvYf9TCL+HAwka4AAAAASUVORK5CYII=");background-repeat: no-repeat;background-position: left top;cursor:pointer;}#pme_cardbar_info .pme_cardbar_info_col1,#pme_cardbar_info .pme_cardbar_info_col2 {display: block;float:left;width: 300px;margin-top: 14px;margin-left: 20px;}#pme_cardbar_info h1 {display: block;font-family: Verdana;font-size: 22px;color: #ffffff;line-height: .727272727;margin-top: .727272727em;margin-bottom: .727272727em;}#pme_cardbar_info h2 {display: block;font-family: Verdana;font-size: 16px;color: #ffffff;line-height: 1;margin-top: 1em;margin-bottom: 1em;}#pme_cardbar_info p {display: block;font-family: Verdana;font-size: 11px;color: #ffffff;line-height: 1.454545455;margin-top: 1.454545455em;margin-bottom: 1.454545455em;}#pme_cardbar_info .pme_cardbar_info_desc {width:300px;height:65px;overflow:hidden;}#pme_cardbar_info .pme_cardbar_info_img {width: 290px;height: 218px;overflow: hidden;border: 2px solid #fff;-moz-border-radius: 4px;-webkit-border-radius: 4px;border-radius: 4px;}#pme_cardbar_info .pme_cardbar_info_img img {display: block;width: auto;height:auto;}#pme_cardbar_info table.pme_cardbar_info_table {width: 100%;font-family: Verdana;font-size: 12px;color: #ffffff;line-height: 1.333333333;margin-top: 1.333333333em;margin-bottom: 1.333333333em;border-collapse:collapse;}#pme_cardbar_info table.pme_cardbar_info_table tr td,#pme_cardbar_info table.pme_cardbar_info_table tr th {text-align: left;padding:4px;}#pme_cardbar_info table.pme_cardbar_info_table tr th {font-weight: bold;}#pme_cardbar_info table.pme_cardbar_info_table tr:nth-child(odd) td,#pme_cardbar_info table.pme_cardbar_info_table tr:nth-child(odd) th {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAQMAAAAk8RryAAAAA1BMVEX///+nxBvIAAAAAXRSTlOArV5bRgAAAA5JREFUGBljYBgFgwkAAAGQAAHiIwnTAAAAAElFTkSuQmCC");}#pme_cardbar_info .pme_cardbar_info_button {display: block;margin-top: 6px;margin-bottom: 6px;font-family: Verdana;font-size: 12px;line-height: 24px;font-weight: bold;color: #fff;text-shadow: #000 0px -1px 0px;background-color: #fff;text-align: center;text-decoration: none;border: 1px solid #b8370b;-moz-border-radius: 4px;-webkit-border-radius: 4px;border-radius: 4px;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAYCAIAAABfmbuOAAAAW0lEQVR4ASXLXQqAIBDE8U1Woo/HztAVunzQmYLUyFxrxqcf84fReqwiorKfwGIFbzBwXwWkwBiTkcyVjTwmAA2/CrVwAYAGhHQNR1UbnlN7J2D0UOeBcdmmnw+C4ibzaSsleQAAAABJRU5ErkJggg==");background-repeat: repeat-x;background-position: left top;}#pme_cardbar_info .pme_cardbar_info_button_green {display: block;margin-top: 6px;margin-bottom: 6px;font-family: Verdana;font-size: 14px;line-height: 40px;font-weight: bold;color: #fff;text-shadow: #000 0px -1px 0px;background-color: #74c327;text-align: center;text-decoration: none;border: 1px solid #3e9917;-moz-border-radius: 4px;-webkit-border-radius: 4px;border-radius: 4px;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAoCAIAAAC0IdcdAAAAV0lEQVR4AX3PsQnAMAxEURXeNwumzyQeIIUhha0fCM41EnJ1PHEWan1c9r129mOnBTuBBXMnGpmp6yjFxix/XrUp3eP5TXs93yuzOK2vVMNzK6YgQ2bBXg8xbIjkqvFMAAAAAElFTkSuQmCC");background-repeat: repeat-x;background-position: left top;}#pme_cardbar_info .pme_cardbar_info_button:hover {color: #ffdb99;}#pme_cardbar_info .pme_cardbar_info_button_green:hover {color: #38302b;text-shadow: #badea3 0px 1px 0px;}#pme_cardbar_info_pointer_w {z-index: 200000;position:absolute;top:22px;left:664px;width: 0;height: 0;border-style: solid;border-width: 12px 0 12px 12px;border-color: transparent transparent transparent #fff;}#pme_cardbar_info_pointer_c {z-index: 200000;position:absolute;top:22px;left:661px;width: 0;height: 0;border-style: solid;border-width: 12px 0 12px 12px;border-color: transparent transparent transparent #e2007a;}</style>');
+document.write('<div id="pme_cardbar"><div id="pme_cardbar_bar"></div></div><div id="pme_cardbar_info_container"><div id="pme_cardbar_info_pointer_w"></div><div id="pme_cardbar_info_pointer_c"></div><div id="pme_cardbar_info"><div id="pme_cardbar_info_close"></div><div class="pme_cardbar_info_col1"><div class="pme_cardbar_info_img"><div id="profilevideo"></div><img id="pme_amateur_mainpic"></div> <a href="#" class="pme_cardbar_info_button_green">Livecam starten</a> <a href="#" class="pme_cardbar_info_button" id="pme_amateur_numvids">65 Videos anzeigen</a> <a href="#" class="pme_cardbar_info_button" id="pme_amateur_numpics">212 Bilder anzeigen</a> <a href="#" class="pme_cardbar_info_button">Vollst&auml;ndiges Profil anzeigen</a></div><div class="pme_cardbar_info_col2"><h1 id="pme_amateur_username">Sexy Sarah</h1><h2 id="pme_amateur_plz">aus 44xxx, Deutschland</h2><p id="pme_amateur_aboutme" class="pme_cardbar_info_desc">Ich drehe liebend gerne Amateurpornos! Ob Outdoor, mit Rollenspielen oder auch mit jeder Menge geilen Dirty Talk - Ich bin mir sicher, ich bringe auch deinen Schwanz zum Kochen!</p><table class="pme_cardbar_info_table" id="pme_amateur_data"><tr><th>Geschlecht:</th><td class="gender">Weiblich</td></tr><tr><th>Alter:</th><td class="age">21 Jahre</td></tr><tr><th>Gr&ouml;&szlig;e:</th><td class="height">161 cm</td></tr><tr><th>Gewicht:</th><td class="weight">45-60kg</td></tr><tr><th>Figur:</th><td class="appearance">schlank</td></tr><tr><th>Sternzeichen:</th><td class="zodiac">Widder</td></tr><tr><th>Postleitzahl:</th><td class="zip">44xxx</td></tr><tr><th>Land:</th><td class="country">Deutschland</td></tr></table></div></div></div>');
+document.write('<form id="open_new_page" method="get" style="display: none" target="_blank" action="http://www.pornme.pm/profile.php"><input type="hidden" name="UID" id="pme_ama_open_UID" value="785892" /><input type="hidden" name="ref" value="0" /><input type="hidden" name="avs" value="0" /><input type="hidden" name="fsk" value="18" /><input type="hidden" name="CID" value="" /><input type="hidden" name="w" value="15079" /><input type="hidden" name="wt" value="" /><input type="hidden" name="ws" value="" /><input type="hidden" name="adtv" value="" /><input type="hidden" name="webmaster_token" value="" /><input type="hidden" name="webmaster_wmid" value="0" /><input type="submit" value="" /></form>');
+
+function pme_browser_canplay(type) {
+var myVideo = document.createElement('video');
+if (myVideo.canPlayType) {
+return (myVideo.canPlayType(type).replace(/no/, '') != '');
+}
+else {
+return false;
+}
+}
+var amateurs = [{"UID":"785892","username":"hotBlanche","zip":"22085","vkey":"068db0f8ea7a777260274255eceae58b19e7663b","bdate":"1988-09-15","age":"26","numpics":"33","numvids":"16","aboutme":"!!! HALLO !!!\n\nHier ist sexy wilde und heisse fickStute :-)\n\nKomm und probier mein sexy K\u00f6rper!!!\n\nK\u00fcsse Dich :-***","gender":"Female","hair_color":"blonde","appearance":"Sportlich","height":"166-170","weight":"56-60","zodiac":"Jungfrau","country":"Czech Republic"},{"UID":"1330924","username":"Antonia-19","zip":"10000","vkey":"","bdate":"1996-12-14","age":"18","numpics":"7","numvids":"22","aboutme":"Hall\u00f6chen ich bin die Antonia und ich suche neue Impulse f\u00fcr mein Sexleben","gender":"Female","hair_color":"brunette","appearance":"schlank","height":"166-170","weight":"56-60","zodiac":"Sch\u00fctze","country":"Germany"},{"UID":"1330614","username":"Blond-Sweetie","zip":"10000","vkey":"","bdate":"1996-01-25","age":"19","numpics":"8","numvids":"28","aboutme":"Hall\u00f6chen ich bin  Blond-Sweetie","gender":"Female","hair_color":"blonde","appearance":"schlank","height":"171-175","weight":"51-55","zodiac":"Wassermann","country":"Germany"},{"UID":"1278455","username":"Sexy-Carolina","zip":"10000","vkey":"","bdate":"1993-11-13","age":"21","numpics":"6","numvids":"107","aboutme":"Hi, ich bin nun ganz neu hier.","gender":"Female","hair_color":"brunette","appearance":"Normal schlank","height":"166-170","weight":"51-55","zodiac":"Skorpion","country":"Germany"},{"UID":"1214103","username":"Sweet-Isabella","zip":"10000","vkey":"","bdate":"1994-11-06","age":"20","numpics":"6","numvids":"162","aboutme":"So endlich ist es so weit\n\nes gibt etwas brandhei\u00dfes und neues\n\n\nK\u00fcsschen deine Isa\n","gender":"Female","hair_color":"brunette","appearance":"schlank","height":"176-180","weight":"56-60","zodiac":"Skorpion","country":"Germany"},{"UID":"1192826","username":"Alexandra-Pink","zip":"10000","vkey":"","bdate":"1993-02-16","age":"22","numpics":"6","numvids":"157","aboutme":"Hi ich bin Alexandra, Pink, wieso Pink ?na das bekommt ihr schon noch heraus, ich habe in meinem Leben schon die eine oder andere Erfahrung gemacht, manche waren super manche naja, und auf diesem Weg suche ich halt mal wieder was neues. Ich lebe zwar in einer Art Beziehung, geh aber meistens eigene Wege was den Sex angeht, Fremdgehen w\u00fcrde ich das nicht nennen, ich hab ja von Anfang gesagt, das ich nie treu sein kann. Er ist Fotograf und hat mich, Alexandra als Muse, wenn er besonders nett ist darf er auch mal ran.","gender":"Female","hair_color":"black","appearance":"Sportlich","height":"171-175","weight":"51-55","zodiac":"Wassermann","country":"Germany"},{"UID":"1164039","username":"CaseyCum","zip":"60***","vkey":"aac400391b48113410efe6acb9dbd2dc9b4e2195","bdate":"1989-01-29","age":"26","numpics":"367","numvids":"66","aboutme":"Hi Ihr S\u00fc\u00dfen,\n\nich bin eine kleine, zwar anfangs etwas sch\u00fcchterne, aber sehr dauergeile Fickmaus ;-)\n\nIch stehe total auf gro\u00dfe harte Schw\u00e4nze, sie zu blasen und sie abspritzen zu sehen! Nat\u00fcrlich werde ich auch gerne sch\u00f6n lang und tief in alle meine L\u00f6cher gefickt!\n\nHast Du Lust auf einen geilen Chat, mich vor der Cam zu sehen oder mich evtl. sogar mal real kennen zu lernen, dann schreib mich einfach an.\n\nViel Spa\u00df!\n\nKuss deine CaseyCum","gender":"Female","hair_color":"blonde","appearance":"75 E Natur","height":"156-160","weight":"56-60","zodiac":"Wassermann","country":"Germany"},{"UID":"1160116","username":"Nadine-Cays","zip":"48565","vkey":"c23161bc84a66bdc971d432b9ef61ec5a46f004f","bdate":"1991-05-08","age":"24","numpics":"240","numvids":"48","aboutme":"Hey Ihr S\u00fc\u00dfen !!!\n \nIch bin Nadine Cays undich freue mich, dass ihr vorbei geschaut habt ! =)\n \nLasst mich Euch in meine versaute und tabulose Welt entf\u00fchren und mit hei\u00dfen, b\u00f6sen, unschuldigen oder einfach nur geilen Clips, Videos und Chats zum absoluten Traumorgasmus bringen !\n \nBei mir findet jeder etwas nach seinem Geschmack, ob Gothic und Dominant oder Teeny - Like, mal ganz blank rasiert oder doch total behaart, ob f\u00fcrs schnelle Vergn\u00fcgen zwischendurch oder f\u00fcr ein sinnliches und Intensives Erlebnis, schaut Euch um und findet Euer Traum - Video oder - Foto !\n \nUnd wenn Du mal doch nicht f\u00fcndig wirst, schreibe mich an ! Ich erf\u00fclle gerne auch Userw\u00fcnsche ! =)\n \nWillst Du auch selbst einmal mit mir drehen? Dann bewirb Dich bei mir mit einem aussagekr\u00e4ftigen Foto und sei mit dabei !\n \nIch freue mich auf Euch !!!\nBussi, Eure Nadine =)","gender":"Female","hair_color":"brunette","appearance":"Schlank","height":"151-155","weight":"46-50","zodiac":"Stier","country":"Germany"},{"UID":"1144096","username":"Nachbarsfoetzchen","zip":"10000","vkey":"","bdate":"1994-06-16","age":"20","numpics":"13","numvids":"181","aboutme":"Ich will mich nicht vollkritzeln","gender":"Female","hair_color":"brunette","appearance":"habe ich","height":"156-160","weight":"46-50","zodiac":"Zwillinge","country":"Germany"},{"UID":"995318","username":"Pussy-Marie","zip":"8630","vkey":"","bdate":"1989-01-15","age":"26","numpics":"335","numvids":"25","aboutme":"Ich bin jung, voller Lebenslust und Verlangen nach hemmungslosem Sex!\nHabe ich garantiert von meiner Mam geerbt, die du hier als Bolschoi-Maske finden kannst!\nWir machen auch zusammen Videos und einige User haben uns auch schon gemeinsam gefickt. Was aber nicht automatisch hei\u00dfen muss, wir ficken gleich mit jedem! Die suchen wir uns schon aus und ihr jetziger Mann steht uns auch beiden zur Verf\u00fcgung!\nSchau dir mal meine Videos an und besuche mich im Chat, das w\u00e4re dazu dann schon mal ein Anfang!","gender":"Female","hair_color":"changing","appearance":"schlank, knabenhaft","height":"171-175","weight":"46-50","zodiac":"Steinbock","country":"Austria"},{"UID":"961457","username":"Tight-Tini","zip":"22149","vkey":"80a92495a5b483824bfe72f82641f3f3501c4996","bdate":"1989-09-06","age":"25","numpics":"17","numvids":"89","aboutme":"Ich bin noch ganz neu in diesem Bereich. Normalerweise arbeite ich als kaufm\u00e4nnische Angestellte, aber habe Lust mich zu zeigen, also warum nicht hier?!","gender":"Female","hair_color":"black","appearance":"zierlich","height":"156-160","weight":"46-50","zodiac":"Jungfrau","country":"Germany"},{"UID":"798541","username":"Candy-Melody","zip":"22391","vkey":"77708616c75b005b571ce2b5e35d602956d8c44e","bdate":"1990-09-30","age":"24","numpics":"188","numvids":"160","aboutme":"<b>Werde mein Fan und erhalte immer die neuesten Infos zu mir und meinen geilen Filmen incl. Fotos und einem free Video!!!<\/b>\nIch bin eine schwanzgeile nymphomane s\u00fc\u00dfe Maus ... du willst mehr wissen? Schau mal in meine Filme, besuch mich in der WebCam oder chatte einfach mal mit mir ;-)\n<b>Alle Filme in HD<\/b> - <b>und NUR <i>HIER<\/i> zu sehen!!<\/b>\n\n\nJa ich stehe nicht nur auf gleich alte M\u00e4nner - nein gerade erfahrene M\u00e4nner reizen mich!\n\nWarum?\nHey - auf alten Schiffen lernt man das segeln ;-)\n\n\nTraust DU dich????\n\n<b>Hinweis !!!<\/b>\n\nIch nehme kein TG!\nIch bin keine Prostituierte!\n\"Hey ficken?\" Nachrichten l\u00f6sche ich!\nIch bin nicht \"treffbar\"!\n\n<hr \/>\n\nMich kann man kennenlernen - Ja!\n\nAber:\nIch trinke gerne einen Kaffee mit dir, jedoch ist das kein \"Popp-Date\" - sondern ein Treffen um zu sehen ich bin echt und nicht ein Fake, du kannst beim Kaffee sehen das ich die bin mit der du hier schreibst, die du vor der WebCam siehst und deren Filme du hier sehen kannst.\n<b><span><\/span><\/b>","gender":"Female","hair_color":"blonde","appearance":"schlank, aber nicht kurvenlos ","height":"156-160","weight":"46-50","zodiac":"Waage","country":"Germany"},{"UID":"706801","username":"Tropfsteinhoehle","zip":"10245","vkey":"4771486459ec6e0d2616b8c41d03d613d35da761","bdate":"1990-09-27","age":"24","numpics":"131","numvids":"58","aboutme":"Hey ich bin Gina und s\u00fc\u00dfe 25 Jahre jung. Ich bin versaut, dreckig und eigentlich total lieb ;-)\nIch freu mich schon auf Dich! \nKuss Gina","gender":"Female","hair_color":"brunette","appearance":"normal","height":"171-175","weight":"56-60","zodiac":"Waage","country":"Germany"},{"UID":"678506","username":"JennyCoxville","zip":"70178","vkey":"","bdate":"1990-08-01","age":"24","numpics":"8","numvids":"172","aboutme":"Hier wird nichts gemogelt, sondern alle Videos und Orgasmen sind echt. Es besteht die M\u00f6glichkeit auf ein echtes Usertrefffen mit Jenny Coxville, wozu Du allerdings eine Nachricht senden solltest. Versuche dabei aber Dich erstmal vorzustellen und einen netten Eindruck zu hinterlassen, als gleich mit der T\u00fcr ins Haus zu fallen.<br \/><br \/>\nSchau Dir doch gleich mal eines meiner zahlreichen Videos an und Du wirst selbst feststellen, dass ich wirklich Spa\u00df beim Sex habe und jeden Fick genie\u00dfe. Mein L\u00f6cheln und der Ausdruck meiner Augen verr\u00e4t Dir wie geil ich dabei werde, wenn Du mich vor der Kamera oder auch ganz privat durchfickst.<br \/><br \/>\nSchreib mir doch gleich eine Nachricht und sei nicht sch\u00fcchtern ...<br \/>\n... denn ich beisse nicht, sondern w\u00fcrde viel lieber ganz zart an Deinem Schwanz knabbern !!!<br \/><br \/>\nAls kleiner Tip: Wenn Du mich real treffen m\u00f6chtest, dann solltest Du nicht nur \"FICKEN\" als Nachricht schreiben, sondern mir schon genauer verraten, was Du geiles mit mir anstellen magst.<br \/><br \/>\nBis gleich<br \/>\nJenny Coxville","gender":"Female","hair_color":"blonde","appearance":"normal","height":"166-170","weight":"56-60","zodiac":"L\u00f6we","country":"Germany"},{"UID":"626600","username":"SweetMichelle","zip":"34117","vkey":"c5818b09d86fa0df950d4ea0854dd06616582119","bdate":"1994-01-28","age":"21","numpics":"99","numvids":"116","aboutme":"Ich bin Michelle, 19 Jahre jung, geboren in Polen und seit 2 Jahren in Deutschland :)Ich bin eine geile kleine Teeny Maus, mit der du hier sehr viel Spa\u00df haben wirst.Ich wohne in Kassel.\nIch liebe geile Outfits, Minir\u00f6cke (am besten ohne H\u00f6schen drunter), Strapsen, High Heels und viel mehr.\n\n \n\nBei mir bekommst du\ngeile Private Fickvideos ohne Gummi, keine Fake Videos oder Fake Sperma oder andere Tricks.\nBei mir und an mir ist alles ECHT !!!\nIch liebe es devot zu sein und von den M\u00e4nnern benutzt zu werden.Ich bin ein braves M\u00e4dchen und gehorche sehr gut.\n\n \n\nIn meiner Webcam Show wirst du sehr viel Spa\u00df haben.\n\n\nIch werde mit Dildos spielen, sie in meine glatte und enge Muschi und auch gerne Anal einf\u00fchren.\nIch stehe auch auf Mundknebel, Nippel klammer, Wachsspiele, W\u00e4scheklammern spiele, Schlucken, Atemkontrolle und andere versaute Sachen.\n\n\nViele Spa\u00df w\u00fcnsche ich euch jetzt.\nEure Michelle","gender":"Female","hair_color":"blonde","appearance":"Schlank","height":"161-165","weight":"46-50","zodiac":"Wassermann","country":"Germany"},{"UID":"543890","username":"Leonie-pur","zip":"70111","vkey":"52207ce22dcb1c82bea6519bf65f031d7e6162cb","bdate":"1992-05-24","age":"22","numpics":"88","numvids":"296","aboutme":"Huhuuu und willkommen auf meinem Profil!\n\nIch bin <b>Leonie-Pur<\/b>, ein junges, zeigefreudiges und vorallem versautes M\u00e4dl! Mit viel Lust und Leidenschaft lebe ich mein Sexleben \u00f6ffentlich aus und stelle meine Videos hier online.\nIch lasse dich an meinem privaten Sexleben teilhaben und zeige dir meine Erlebnisse, die geilsten H\u00f6hepunkte und meine intimsten Momente.\nDie Cam habe ich immer dabei, damit ich jedes Erlebnis festhalten und mit dir teilen kann und besonders freue ich mich auf das Feedback meiner Zuschauer. Das macht mich direkt wieder scharf den n\u00e4chsten hei\u00dfen Clip zu drehen!\nSolltest du also genauso auf <b>pure Lust und hei\u00dfen Sex<\/b> stehen, dann bist du bei mir genau richtig!\n\nSchreib mich doch einfach mal an und lass uns kennenlernen!\n\nKnutscha, deine Leonie. ","gender":"Female","hair_color":"blonde","appearance":"Schlank, Sportlich","height":"161-165","weight":"46-50","zodiac":"Zwillinge","country":"Switzerland"},{"UID":"498878","username":"PrettyNina","zip":"01","vkey":"","bdate":"1990-02-18","age":"25","numpics":"19","numvids":"87","aboutme":"Ich bin PrettyNina - 21 Jahre jung und komme aus Dresden und 100% Amateur. Freue mich sehr das du \u00fcber meine Seite gestolpert bist ;)\n\n<b>Du willst in einem Film mitspielen? Dann schreib mir und bewerb dich bei mir!!!<\/b>\n\n\u00dcber mich: Ich liebe es einfach wenn mir beim Sex zugeschaut wird. Vor kurzem habe ich auch mit User-Dates begonnen und suche immer zeigefreudige M\u00e4nner die ihren Spa\u00df mit mir vor der Kamera ausleben m\u00f6chten... Ich stehe auch total auf Webcamsex, vielleicht hast du Lust mich mal zu besuchen ? Mit mir meine geilen Sexuellen Tr\u00e4ume und Phantasien auszuleben, bin fast t\u00e4glich Online! Ich zeige dir alles was du willst nat\u00fcrlich mit Ton, St\u00f6hn & Spritzgarantie! ;) Ich bin auch immer f\u00fcr Videovorschl\u00e4ge oder W\u00fcnsche offen lass sie mich einfach wissen :P\n\nRealDates - Wo andere noch Privatnachrichten austauschen, filme ich schon mein n\u00e4chstes RealDate. Meldet dich, wenn du die Hauptrolle in einem meiner Filme sein m\u00f6chtest! Nur eine Bedingung: WER FICKEN WILL MUSS FREUNDLICH SEIN","gender":"Female","hair_color":"blonde","appearance":"schlank","height":"166-170","weight":"46-50","zodiac":"Wassermann","country":"Germany"},{"UID":"486428","username":"QueenParis","zip":"9xxxx","vkey":"","bdate":"1988-02-07","age":"27","numpics":"19","numvids":"274","aboutme":"Ich bin die QueenParis 25 Jahre alt Erotik - Model und komme aus dem sch\u00f6nen Frankenland Zwinker*** Genauer gesagt aus dem sch\u00f6nen N\u00fcrnberg!!! Da Ich schon relativ fr\u00fch in meinem Leben gemerkt habe das Sex ein unheimlich wichtiger Bestandteil in meinem Leben ist, dauerte es nicht sehr lange, und Ich begann meine ersten kleineren Porno-Filmchen von zu hause aus zu drehen! Mittlerweile kann man mich ja schon in einigen geilen Clips hier bei pornme bewundern Zwinker*** Es gibt fast nichts in Sachen Sex worauf Ich nicht stehe. Wie Ihr sicher aber schon bemerkt habt! Sachen wie Schmerzen oder Dinge die in die Toilette geh\u00f6ren brauche Ich nicht aber Ich denke das muss man auch nicht unbedingt haben. Wenn Ihr vielleicht auch mal Lust habt einen geilen Clip mit mir zu drehen dann schreibt mir doch einfach eine nette Nachricht am besten mit Photo dazu, oder besucht mich einfach mal vor der Webcam dann k\u00f6nnen wir sehr gerne mal n\u00e4heres besprechen. \n\nIch freue mich jetzt schon von Euch zu h\u00f6ren;)\n\nBis dahin Ihr Lieben hei\u00dfe K\u00fcsse Eure QueenParis ","gender":"Female","hair_color":"black","appearance":"sportlich","height":"161-165","weight":"46-50","zodiac":"Wassermann","country":"Germany"},{"UID":"453101","username":"Heiss-und-Feucht","zip":"26954","vkey":"f03df1635cb4da05a51772cfa8e53531077ca281","bdate":"1991-02-26","age":"24","numpics":"3138","numvids":"1018","aboutme":"Hi sch\u00f6n das du auf meinem Profil bist ich stelle mich mal kurz vor ich bin Sindy und bin 22 Jahre ich biete dir hier meine Bilder und Videos an die dir so manchmal deine seit vers\u00fc\u00dfen werden ;) ich drehe haupts\u00e4chlich alleine oder mit meinem Mann aber wir hatten auch schon Userdates (wovon Ich auch Videos habe ). Seit kurzem ist auch eine Boogina auf dem Markt wof\u00fcr mir ein Pussyabdruck genommen wurde und jetzt kann jeder Mann geil Zuhause meine Pussy ficken wenn er darauf bock hat\nso wenn du magst ich freue mich auf dich und w\u00fcnsche dir noch viel spa\u00df auf meinem Profil und bitte vergesst die videobewertungen nicht vielen dank an euch\n","gender":"Female","hair_color":"blonde","appearance":"schlank","height":"161-165","weight":"46-50","zodiac":"Fische","country":"Germany"},{"UID":"433447","username":"sexynaty","zip":"20000","vkey":"","bdate":"1991-09-23","age":"23","numpics":"19","numvids":"1075","aboutme":"Hallo Ihr Lieben,\nIch bin SexyNaty 20 Jahre alt,  ein naturgeiles M\u00e4del, Da ich ziemlich jung bin , bin ich auch offen f\u00fcr alles Neue..\nBin ganz neu hier und lasse mich \u00fcberraschen was ich hier erleben kann.\nWenn du meine mehrfachen Orgasmen sehen m\u00f6chtest nun schau mal meine Videos und Bilder und \u00fcberzeug dich selbst!\nAlle meine videos sind in HD-Qualit\u00e4t!\nFalls Ihr einen Videowunsch habt werden wir gerne versuchen ihn zu erf\u00fcllen.\n\nAlso bis bald und viel Spa\u00df!\nP.S. Bitte Bewertung und Kommi nicht vergessen! :)\n","gender":"Female","hair_color":"blonde","appearance":"sexy","height":"171-175","weight":"56-60","zodiac":"Jungfrau","country":"Germany"},{"UID":"346398","username":"ViolettaAngel","zip":"10629","vkey":"ddd82c4809c387fdf3b8979f7bfd329fc1768d88","bdate":"1989-11-08","age":"25","numpics":"21","numvids":"120","aboutme":"Hey mein S\u00fc\u00dfer sch\u00f6n dich hier zu sehen:-)Wenn es dir hier gef\u00e4llt f\u00fcg mich schnell zu deiner Fanliste hinzu und erfahre immer alle Neuigkeiten(neue Videos,Bilder,Treffen,Termine,GangBang-Partys) zuerst!!!!!Dicken Kuss deine Violetta","gender":"Female","hair_color":"other","appearance":"Normal","height":"166-170","weight":"56-60","zodiac":"Skorpion","country":"Germany"},{"UID":"344225","username":"Pinadeluxe","zip":"39104","vkey":"0bae48efea7bc04763ac3e045e30218164650be0","bdate":"1989-05-20","age":"25","numpics":"169","numvids":"155","aboutme":"<i><b>Jetzt mein Fan werden und exklusive Bilder und Videos per Mail sichern!<\/b><\/i>\n\nHallo, ich bin die Pina. Man(n) kennt mich auch als PinaDeluxe. Vielleicht hast Du mich ja schonmal in dem ein oder anderen Amateur Porno gesehen!? \n\nIch war von klein auf viel an der frischen Luft und liebe die Natur. Das ist wohl auch der Grund, dass ich total auf Abenteuer im freien stehe, wenn du wei\u00dft was ich meine! ;) Als ich bei einem dieser Abenteuer beobachtet wurde, habe ich entdeckt, dass ich eine kleine Exhibitionistin bin.\n\nPornMe ist also die beste Gelegenheit f\u00fcr mich, dir meinen nackten K\u00f6rper zu pr\u00e4sentieren.\n\n<b>Ach ja ;) HD Amateur Pornos<\/b>...\nAlle Videos von mir sind in Full HD Qualit\u00e4t !\nKeine gestellten \/ geschnittenen Szenen!\nKein Drehbuch \/ 100 % Amateuer\nAlle Filme mit Original-Ton\n","gender":"Female","hair_color":"brunette","appearance":"schlank","height":"161-165","weight":"51-55","zodiac":"Stier","country":"Germany"},{"UID":"113","username":"MeliDeluxe","zip":"52351","vkey":"","bdate":"1990-05-16","age":"24","numpics":"41","numvids":"878","aboutme":"<center><b>MELIDELUXE\nDAS GEILSTE F\u00d6TZCHEN AUF PORNME !\n___________________________________\n\nAMATEUR PORNO !\n... GANZ PRIVAT &amp; 100% GEIL !!!\n___________________________________\n\nHier spielst Du im Porno mit...<\/b>\n\nW\u00c4HREND ANDERE NUR ABZOCKEN UND HINHALTEN TREFFE ICH MICH WIRKLICH MIT USERN ZUM PORNODREH, WIE DU AUF MEINEN VIDEOS ERKENNEN KANNST. VON GANGBANG BIS KEHLENFICK, F\u00dcR JEDEN IST WAS GEILES DABEI.\n<b>___________________________________\n\nHight Definition Porno Videos...<\/b>\n\nVideos mit High Definition Camcorder aufgenommen !\nVideos in WMV FULL HD 1080p Top Qaulit\u00e4t !\nVideos zum niedrigpreis !\n\nBildergalarien Hochaufl\u00f6send &amp; geringer kompremierung !\nWunschvideo &amp; Wunschbildergalarien !\n\nWeb Cam in Wunsch-Outfit !\nWeb Cam in stylischer Umgebung !\nWeb Cam mit unvergesslichen Perspektiven !\nWeb Cam so wie Du sie sehen willst !<\/center>","gender":"Female","hair_color":"black","appearance":"Schlank","height":"171-175","weight":"51-55","zodiac":"Stier","country":"Germany"},{"UID":"110","username":"sandy226","zip":"56626","vkey":"658b6e6a1f82092ddda4d0cc0a53aa2c3000d800","bdate":"1989-06-22","age":"25","numpics":"152","numvids":"516","aboutme":"Hi ;-)  bin die Sandy  ;-)  und komme aus der N\u00e4he von Koblenz .\nHoffe Euch gefallen meine Amateur-Clips denn\nich suche immer mal wieder neue LEute mit denen ich mal clips drehen kann also meldet euch einfach ;-) \nwas sonst noch ;-) ..hmmm    ;-)  habe eigentlich fast keine tabus  ;-)  bin sehr devot und versaut und lasse mich  gerne benutzen ,und !!\nstehe drauf angespritzt zu werden und dann mit dem Sperma geile Spiele zu machen  , ausserdem mag ich es sehr! hart in meinegeile Fotze gefickt zuwerden und auch mein Arsch will immer \u00f6fters mal  ran  ;-) \ntja ... wenn ihr sonst noch was wissen wollt   ;-)  fragt mich einfach  \n\nkisses  ","gender":"Female","hair_color":"blonde","appearance":"schlank","height":"166-170","weight":"46-50","zodiac":"Krebs","country":"Germany"},{"UID":"1061632","username":"Finola903","zip":"22047","vkey":"267e8277b55d459b4d2ff1abcf69a3367ecbaf54","bdate":"1990-03-31","age":"25","numpics":"78","numvids":"5","aboutme":"Ich bin jung, noch etwas unerfahren und trotzdem - oder gerade deswegen - m\u00f6chte ich mich vor der Cam zeigen.\nIch bin eher der z\u00e4rtliche, sch\u00fcchterne Typ. Ich liebe es lange und ausgiebig geleckt zu werden. Ein langes Vorspiel geh\u00f6rt einfach dazu. \nWobei... ein Quicky zwischen T\u00fcr und Angel ist ab und zu auch mal geil. ;)\nFreue mich auf Dich!","gender":"Female","hair_color":"brunette","appearance":"zierlich","height":"156-160","weight":"46-50","zodiac":"Widder","country":"Germany"},{"UID":"1189377","username":"HeisseInes","zip":"09111","vkey":"","bdate":"1992-01-06","age":"23","numpics":"7","numvids":"5","aboutme":"Ich bin hier, um neue Menschen kennenzulernen. ;) Wenn Du Lust auf eine interessante und hei\u00dfe Zeit zu zweit hast, dann schau bei mir rein! Ausziehen werde ich mich nicht, aber auch mit Dirty-Talk wirst Du Dich sicherlich nicht langweilen!","gender":"Female","hair_color":"black","appearance":"normal","height":"176-180","weight":"51-55","zodiac":"Steinbock","country":"Poland"},{"UID":"1334529","username":"SuesseAidara","zip":"02625","vkey":"","bdate":"1991-08-15","age":"23","numpics":"82","numvids":"1","aboutme":"Meine Lieblings-Fetisch Rollenspiele ... es ist so viel Spa\u00df und ich denke, ich bin sehr gut darin! Ich kann eine schmutzige Schlampe und ich kann s\u00fc\u00df und unschuldig sein .. jetzt bin ich auf ein Assistent zu denken, und ich bin auf der Suche nach ein pacient Sie meinen, weil ich dich brauche einige besondere Sorgen zu geben!","gender":"Female","hair_color":"black","appearance":"Normal","height":"171-175","weight":"51-55","zodiac":"L\u00f6we","country":"Romania"},{"UID":"919298","username":"Lollipopo69","zip":"60","vkey":"9a72be9a15973e7657de2640f8d4ac6f82a308e5","bdate":"1992-04-25","age":"23","numpics":"68","numvids":"62","aboutme":"Hey S\u00fc\u00dfer,\n\nich freu mich das du auf mein Profil gesto\u00dfen bist. ;-)\nDu stehst auf sch\u00f6ne Naturtitten und pralle Hintern?\ndann bist du bei mir genau richtig!\n\nBei mir gibts geile Videos und hei\u00dfe Mails, scroll einfach mal nach unten, da siehst du sie ;-)\noder schreib mir einfach eine Mail ;-)\n\n\u00dcber eine Bewertung meiner Videos freue ich mich sehr!!\n\nBis gleich..\nBig kisses..\nKathy ;-)","gender":"Female","hair_color":"blonde","appearance":"sportlich","height":"166-170","weight":"56-60","zodiac":"Stier","country":"Germany"},{"UID":"1343490","username":"DreamBerta","zip":"52062","vkey":"","bdate":"1993-03-28","age":"22","numpics":"7","numvids":"5","aboutme":"Ich bin eine geile, sympathische Frau, die Spass daran hat, hier zu sein und die sich gerne nackt zeigt... Dirty-Talk ist das beste Vorspiel, meinst Du nicht? Magst Du mir von Deinen wildesten Fantasien erz\u00e4hlen und mit mir etwas Geiles erleben?  ;) Lass uns Spass haben. Wixen ?","gender":"Female","hair_color":"brunette","appearance":"Normal","height":"166-170","weight":"51-55","zodiac":"Widder","country":"Ukraine"},{"UID":"1168387","username":"Beatrisa","zip":"74722","vkey":"","bdate":"1988-01-02","age":"27","numpics":"9","numvids":"0","aboutme":"Hallo, ich bin eine\n atrractive. BIn gerade BEHAART!\n\n\n girl und bin SINGLE.\n Wenn du willst wissen mehr von mich so einfach fragst mich und guck meine video and fotos und oder besuchst mich gerade in meine LIVECAM","gender":"Female","hair_color":"blonde","appearance":"sexy:-)","height":"166-170","weight":"51-55","zodiac":"Steinbock","country":"Germany"}];
+var current_UID = 785892;
+var parseHTML = function(str) {
+var tmp = document.implementation.createHTMLDocument();
+tmp.body.innerHTML = str;
+return tmp.body.children;
+};
+function pme_load_cardbar() {
+pornme.load_jquery(function() {
+var cardbar = document.getElementById('pme_cardbar_bar');
+
+// calculate amateur count for available height
+var height = window.innerHeight - parseInt(getComputedStyle(cardbar)['top']);
+var amateur_count = parseInt(height / 65);
+// fill with amateurs
+for (var i = 0; i < amateur_count; i++) {
+var ama_data = amateurs[i];
+var amateur = document.createElement("a");
+amateur.setAttribute("href", "#");
+amateur_image = document.createElement("div");
+amateur_img = document.createElement("img");
+amateur_img.setAttribute("src", "http://cache.pornme.com/images/profile/" + ama_data['UID'] + "_290_218_18.jpg");
+amateur_image.appendChild(amateur_img);
+amateur.appendChild(amateur_image);
+
+var countrymap = {
+'Germany': 'Deutschland',
+'Austria': 'Österreich',
+'Switzerland': 'Schweitz',
+'Spain': 'Spanien',
+'Poland': 'Polen'
+};
+
+jQuery(amateur).data('username', ama_data['username']);
+jQuery(amateur).data('UID', ama_data['UID']);
+jQuery(amateur).data('age', ama_data['age']);
+jQuery(amateur).data('zip', ama_data['zip'].substring(0, 2) + 'xxx');
+jQuery(amateur).data('vkey', ama_data['vkey']);
+jQuery(amateur).data('numvids', ama_data['numvids']);
+jQuery(amateur).data('numpics', ama_data['numpics']);
+jQuery(amateur).data('weight', ama_data['weight']);
+jQuery(amateur).data('height', ama_data['height']);
+jQuery(amateur).data('zodiac', ama_data['zodiac']);
+jQuery(amateur).data('country', ((typeof countrymap[ama_data['country']] == 'undefined') ? ama_data['country'] : countrymap[ama_data['country']]));
+jQuery(amateur).data('aboutme', ama_data['aboutme']);
+jQuery(amateur).data('appearance', ama_data['appearance']);
+
+cardbar.appendChild(amateur);
+};
+function load_profilevideo(UID, vkey) {
+if (pme_browser_canplay('video/mp4; codecs="avc1.64001E"')) {
+jQuery('#profilevideo').empty().html('<div style="margin-top: 5px;height: 215px;display: table-cell;vertical-align: middle;"><video style="margin-left: 5px;" onended="jQuery(\'#profilevideo\').hide();jQuery(\'#pme_amateur_mainpic\').show();" width="290" autoplay="" src="//www.pornme.pm/profilevideo.php?UID=' + UID + '"></video></div>');
+} else {
+var player = $f("profilevideo", {src: "//cache.pornme.com/swf/79771d777ba34ab4d893aab593da83e2/flowplayer-3.2.10.swf", wmode: "transparent", height: 250}, {
+key: 'df6f7e1b2e857aca2f5',
+canvas: {
+backgroundColor: '#f2f2f2'
+},
+logo: {
+url: 'http:///images/pornme-watermark-small.png',
+fullscreenOnly: false,
+bottom: 5,
+right: 5,
+displayTime: 0
+},
+plugins: {
+f4m: {
+url: "//cache.pornme.com/swf/79771d777ba34ab4d893aab593da83e2/flowplayer.f4m-3.2.9.swf"
+},
+httpstreaming: {
+url: "//cache.pornme.com/swf/79771d777ba34ab4d893aab593da83e2/flowplayer.httpstreaming-3.2.8.swf"
+},
+bwcheck: {
+url: "//cache.pornme.com/swf/79771d777ba34ab4d893aab593da83e2/flowplayer.bwcheck-httpstreaming-3.2.9.swf",
+dynamic: true
+},
+controls: {
+url: '//cache.pornme.com/swf/79771d777ba34ab4d893aab593da83e2/flowplayer.controls-3.2.10.swf',
+timeColor: '#ffa600',
+progressGradient: 'medium',
+bufferGradient: 'none',
+durationColor: '#ffdb99',
+tooltipColor: '#5F747C',
+buttonColor: '#f59400',
+volumeSliderColor: '#000000',
+progressColor: '#b53717',
+bufferColor: '#ffa600',
+sliderGradient: 'none',
+tooltipTextColor: '#ffffff',
+timeBgColor: '#555555',
+sliderColor: '#8b1313',
+backgroundGradient: [0.6, 0.3, 0, 0, 0],
+borderRadius: '0px',
+buttonOverColor: '#ffdb99',
+volumeSliderGradient: 'none',
+backgroundColor: '#666666',
+height: 24,
+opacity: 1.0
+}
+},
+clip: {
+useHWScaling: true,
+autoBuffering: true,
+autoPlay: true,
+bufferLength: 2,
+url: "http://watch.pornme.com:443/trailer/smil:" + vkey + "/manifest.f4m",
+urlResolvers: ['f4m', 'bwcheck'],
+provider: 'httpstreaming',
+live: false,
+onFinish: function(clip) {
+jQuery('#profilevideo').hide();
+jQuery('#pme_amateur_mainpic').show();
+}
+},
+config: {
+controlBarBackgroundColor: '0xaaaaaa',
+showMenu: false,
+showPlayListButtons: false,
+initialScale: 'scale',
+allowFullScreen: true,
+showFullScreenButton: true,
+useNativeFullScreen: false
+}
+});
+$f(0).play();
+}
+}
+if (!pme_browser_canplay('video/mp4; codecs="avc1.64001E"')) {
+jQuery(document).ready(function() {
+jQuery.getScript('/secure/pornme_player.js');
+jQuery.getScript('/js/flashembed.min.js');
+});
+}
+var close_button = document.getElementById('pme_cardbar_info_close');
+jQuery('#pme_cardbar_bar a').hover(function(el) {
+var amateurs = document.querySelectorAll('#pme_cardbar_bar a');
+var bar = document.getElementById('pme_cardbar_bar');
+var info = document.getElementById('pme_cardbar_info_container');
+var pointer_w = document.getElementById('pme_cardbar_info_pointer_w');
+var pointer_c = document.getElementById('pme_cardbar_info_pointer_c');
+
+var sourceElement = (el.srcElement && el.srcElement.tagName == 'A' ? el.srcElement : (el.fromElement && el.fromElement.tagName == 'A' ? el.fromElement : el.currentTarget));
+var i = jQuery('#pme_cardbar_bar a').index(sourceElement);
+current_UID = jQuery(sourceElement).data('UID');
+jQuery('#pme_ama_open_UID').val(current_UID);
+jQuery('#pme_amateur_username').text(jQuery(sourceElement).data('username'));
+jQuery('#pme_amateur_plz').text(jQuery(sourceElement).data('zip') + ', aus ' + jQuery(sourceElement).data('country'));
+jQuery('#pme_amateur_mainpic').attr('src', 'http://cache.pornme.com/images/profile/' + jQuery(sourceElement).data('UID') + '_290_218_18.jpg');
+
+jQuery('#pme_amateur_data .gender').text(jQuery(sourceElement).data('gender'));
+jQuery('#pme_amateur_data .age').text(jQuery(sourceElement).data('age') + ' Jahre');
+jQuery('#pme_amateur_data .height').text(jQuery(sourceElement).data('height') + ' cm');
+jQuery('#pme_amateur_data .weight').text(jQuery(sourceElement).data('weight') + ' kg');
+jQuery('#pme_amateur_data .appearance').text(jQuery(sourceElement).data('appearance'));
+jQuery('#pme_amateur_data .gender').text(jQuery(sourceElement).data('gender'));
+jQuery('#pme_amateur_data .zodiac').text(jQuery(sourceElement).data('zodiac'));
+jQuery('#pme_amateur_data .zip').text(jQuery(sourceElement).data('zip'));
+jQuery('#pme_amateur_data .country').text(jQuery(sourceElement).data('country'));
+jQuery('#pme_amateur_aboutme').html(jQuery(sourceElement).data('aboutme'));
+jQuery('#pme_amateur_numvids').text(jQuery(sourceElement).data('numvids') + ' Videos anzeigen');
+jQuery('#pme_amateur_numpics').text(jQuery(sourceElement).data('numpics') + ' Bilder anzeigen');
+
+jQuery('#pme_cardbar, #pme_cardbar_info_container').click(function(e) {
+	if (!((e.srcElement && e.srcElement.id == 'pme_cardbar_info_close') || (e.target && e.target.id == 'pme_cardbar_info_close'))) {
+		jQuery('#open_new_page').submit();
+	}
+});
+
+if (jQuery(sourceElement).data('vkey') != '') {
+if (jQuery('#profilevideo').is(':hidden')) {
+jQuery('#pme_amateur_mainpic').hide();
+jQuery('#profilevideo').show();
+load_profilevideo(current_UID, jQuery(sourceElement).data('vkey'));
+}
+} else {
+jQuery('#profilevideo').hide();
+jQuery('#pme_amateur_mainpic').show();
+}
+// window position
+var pos = parseInt(getComputedStyle(bar)['top']) + 5 + (i * 63);
+
+if (pos + parseInt(getComputedStyle(info)['height']) > window.innerHeight) {
+info.style.top = parseInt(getComputedStyle(bar)['height']) - 350 + 'px';
+var j = (amateurs.length - i - 1);
+pointer_w.style.top = parseInt(getComputedStyle(info)['height']) - 36 - (j * 62) + 'px';
+pointer_c.style.top = parseInt(getComputedStyle(info)['height']) - 36 - (j * 62) + 'px';
+} else {
+info.style.top = parseInt(getComputedStyle(cardbar)['top']) + i * 64 + 'px';
+pointer_w.style.top = '22px';
+pointer_c.style.top = '22px';
+}
+
+if (info.classList) {
+info.classList.add('visible');
+} else {
+info.className += ' ' + 'visible';
+}
+});
+
+jQuery('#pme_cardbar_info_container').on('mouseleave',
+function() {
+jQuery('#profilevideo').empty();
+var info = document.getElementById('pme_cardbar_info_container');
+if (info.classList) {
+info.classList.remove('visible');
+} else {
+info.className = info.className.replace(new RegExp('(^|\\b)' + 'visible'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+}
+});
+
+// close info window
+close_button.addEventListener('click', function(el) {
+var info = document.getElementById('pme_cardbar_info_container');
+jQuery('#profilevideo').empty();
+if (info.classList) {
+info.classList.remove('visible');
+} else {
+info.className = info.className.replace(new RegExp('(^|\\b)' + 'visible'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+}
+});
+});
+};
+if (typeof pornme === "undefined") {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    if (script.readyState) {
+        script.onreadystatechange = function () {
+            if (script.readyState == "loaded" || script.readyState == "complete") {
+                script.onreadystatechange = null;
+                pme_load_cardbar();
+            }
+        };
+    } else {
+        script.onload = function () {
+            pme_load_cardbar();
+        };
+    }
+    script.src = document.location.protocol+'//www.pornme.pm/wrb/js/pme_ads.js';
+    document.getElementsByTagName("head")[0].appendChild(script);
+}
+else {
+    pme_load_cardbar();
+}
